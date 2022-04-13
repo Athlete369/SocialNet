@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monstagram</title>
+    <style>
+        h1{
+            font-family: sans-serif;
+            font-weight: 90px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Monstagram</h1>
+    <form action="/" method="POST">
+        <input type="text" placeholder="Name" name="name">
+        <input type="text" placeholder="Post" name="post">
+        <input type="submit" value="Submit">
+    </form>
+    <h2>All Posts</h2>
+    <ul>
+    {% for post in posts %}
+    <span>Posted By:</span><span>{{post.name}}</span>
+    <br>
+    <li>{{post.content}}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
